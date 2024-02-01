@@ -10,11 +10,11 @@ import com.mcas2.roomcodelab.entities.Word;
 import java.util.List;
 
 public class WordViewModel extends AndroidViewModel {
-    private WordRepository mRepository;
+    private Repository mRepository;
     private final LiveData<List<Word>> mAllWords;
     public WordViewModel (Application application) {
         super(application);
-        mRepository = new WordRepository(application);
+        mRepository = new Repository(application);
         mAllWords = mRepository.getAllWords();
     }
 
@@ -23,6 +23,6 @@ public class WordViewModel extends AndroidViewModel {
     }
 
     public void insert(Word word) {
-        mRepository.insert(word);
+        mRepository.insertWord(word);
     }
 }
