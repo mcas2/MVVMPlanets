@@ -10,12 +10,13 @@ import androidx.sqlite.db.SupportSQLiteDatabase;
 
 import com.mcas2.roomcodelab.daos.PictureDao;
 import com.mcas2.roomcodelab.daos.WordDao;
+import com.mcas2.roomcodelab.entities.Picture;
 import com.mcas2.roomcodelab.entities.Word;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database(entities = {Word.class}, version = 1, exportSchema = false)
+@Database(entities = {Word.class, Picture.class}, version = 1, exportSchema = false)
 public abstract class MyRoomDatabase extends RoomDatabase {
     public abstract WordDao wordDao();
     public abstract PictureDao pictureDao();
