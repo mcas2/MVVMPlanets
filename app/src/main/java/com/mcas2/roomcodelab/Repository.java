@@ -17,7 +17,7 @@ public class Repository {
     private LiveData<List<Word>> allWords;
     private LiveData<List<Picture>> allPictures;
 
-    Repository(Application application) {
+    public Repository(Application application) {
         MyRoomDatabase db = MyRoomDatabase.getDatabase(application);
         wordDao = db.wordDao();
         pictureDao = db.pictureDao();
@@ -25,20 +25,20 @@ public class Repository {
         allPictures = pictureDao.getPictures();
     }
 
-    LiveData<List<Word>> getAllWords() {
+    public LiveData<List<Word>> getAllWords() {
         return allWords;
     }
-    LiveData<List<Picture>> getAllPictures() {
+    public LiveData<List<Picture>> getAllPictures() {
         return allPictures;
     }
 
-    void insertWord(Word word) {
+    public void insertWord(Word word) {
         MyRoomDatabase.databaseWriteExecutor.execute(() -> {
             wordDao.insert(word);
         });
     }
 
-    void insertPicture(List<Picture> pictures) {
+    public void insertPicture(List<Picture> pictures) {
         MyRoomDatabase.databaseWriteExecutor.execute(() -> {
             pictureDao.insert(pictures);
         });

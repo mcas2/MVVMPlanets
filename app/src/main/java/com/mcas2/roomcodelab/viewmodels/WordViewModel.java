@@ -1,28 +1,29 @@
-package com.mcas2.roomcodelab;
+package com.mcas2.roomcodelab.viewmodels;
 
 import android.app.Application;
 
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
+import com.mcas2.roomcodelab.Repository;
 import com.mcas2.roomcodelab.entities.Word;
 
 import java.util.List;
 
 public class WordViewModel extends AndroidViewModel {
-    private Repository mRepository;
+    private Repository repository;
     private final LiveData<List<Word>> mAllWords;
     public WordViewModel (Application application) {
         super(application);
-        mRepository = new Repository(application);
-        mAllWords = mRepository.getAllWords();
+        repository = new Repository(application);
+        mAllWords = repository.getAllWords();
     }
 
-    LiveData<List<Word>> getAllWords() {
+    public LiveData<List<Word>> getAllWords() {
         return mAllWords;
     }
 
     public void insert(Word word) {
-        mRepository.insertWord(word);
+        repository.insertWord(word);
     }
 }

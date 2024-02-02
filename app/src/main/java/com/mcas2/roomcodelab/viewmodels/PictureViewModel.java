@@ -1,4 +1,4 @@
-package com.mcas2.roomcodelab;
+package com.mcas2.roomcodelab.viewmodels;
 
 import android.app.Application;
 import androidx.annotation.NonNull;

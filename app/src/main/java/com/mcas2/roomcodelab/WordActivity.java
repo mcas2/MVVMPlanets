@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.mcas2.roomcodelab.entities.Word;
+import com.mcas2.roomcodelab.viewmodels.WordViewModel;
 import com.mcas2.roomcodelab.wordrecycler.WordListAdapter;
 
 public class WordActivity extends AppCompatActivity {
